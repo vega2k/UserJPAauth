@@ -13,11 +13,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-			.antMatchers("/app-login/**","/edit/**","/update/**","/delete/**").authenticated()
+			.antMatchers("/edit/**","/update/**","/delete/**").authenticated()
 			.antMatchers("/**").permitAll()
 			.and()
 			.formLogin()
-			//.loginPage("/index").permitAll()
+			.loginPage("/login-page")
+            .loginProcessingUrl("/app-login")
+            .usernameParameter("app_username")
+            .passwordParameter("app_password")
+            .defaultSuccessUrl("/index")
 			.and()
 			.httpBasic()
 			.and()

@@ -18,13 +18,13 @@
 			</div>
 		</div>
 		
-<!-- 		<div th:unless="${#httpServletRequest.remoteUser}"> -->
-<!-- 			<div class="container my-5"> -->
-<!-- 				<form th:action="@{/app-login}"> -->
-<!-- 					<input type="submit" value="LogIn" class="btn btn-success" /> -->
-<!-- 				</form> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
+		<div th:unless="${#httpServletRequest.remoteUser}">
+			<div class="container my-5">
+				<form th:action="@{/login-page}">
+					<input type="submit" value="LogIn" class="btn btn-success" />
+				</form>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.frodo.myspringboot.jpa.entity.User;
 import com.frodo.myspringboot.jpa.repository.UserRepository;
@@ -17,6 +18,11 @@ import com.frodo.myspringboot.jpa.repository.UserRepository;
 public class UserController {
 	@Autowired
 	UserRepository userRepository;
+	
+	@RequestMapping(value="/login-page")
+	public String homePage() {
+ 		return "customLogin";
+ 	}    
 	
 	@GetMapping("/index")
 	public String index(Model model) {
